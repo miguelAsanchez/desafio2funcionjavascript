@@ -1,0 +1,81 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Tablas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .button {
+    background-color: purple;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: monospace;
+    color: white;
+    padding: 5px;
+    margin-left: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+    <h2>Crear Tablas</h2>
+
+    <!-- Formulario para ingresar el número de filas y columnas -->
+
+    <h3>Tabla Generada:</h3>
+    <div id="tablaContainer"></div>
+
+
+        
+ <div id="idtabla"></div>
+ <br>
+ <button class="button" onclick="generatabla()" >generar tabla </button>
+
+</body>
+<script>
+    function generatabla() {
+            
+             let fila = prompt("Ingresa el numero de filas:");
+             let columna = prompt("Ingresa el numero de columnas:");
+            if(fila<1 ||columna<1){
+                    alert("debe de ingresar un numero valido para generar la tabla")
+                }
+            let tabla="<table>"; 
+            //crea la filas y columna
+            for(let i=0; i<fila;i++){
+        
+          
+                tabla+="<tr>";//genera una fila
+                for(let j=0;j<columna;j++){
+                   
+                    tabla+=`<td>Fila ${i+1}, Columna ${j+1}</td>`; 
+                  
+                }
+              
+                tabla+="</tr>";//cierra fila
+
+               
+            }
+               tabla+="</table>"; 
+               
+               document.getElementById("idtabla").innerHTML = tabla;
+
+    }
+
+    
+</script>
+</html>
