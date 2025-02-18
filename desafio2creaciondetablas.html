@@ -51,8 +51,9 @@
             
              let fila = prompt("Ingresa el numero de filas:");
              let columna = prompt("Ingresa el numero de columnas:");
-            if(fila<1 ||columna<1){
-                    alert("debe de ingresar un numero valido para generar la tabla")
+            if(isNaN(fila) || isNaN(columna) || fila<1 ||columna<1){
+                  document.getElementById("idtabla").innerHTML = "<p style='color: red;'>Debes ingresar números válidos mayores a 0.</p>";
+        return; 
                 }
             let tabla="<table>"; 
             //crea la filas y columna
